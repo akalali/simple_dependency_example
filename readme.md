@@ -8,6 +8,8 @@
 
 You need to have _cmake_ installed. The instructions are stored in `run.sh`.
 
+In the `run.sh` you need to change `user=<user_name>` to your user name.
+
 ### Library 'two_libraries':
 
 ~~~ bash
