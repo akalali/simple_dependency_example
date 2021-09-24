@@ -15,6 +15,7 @@ cd ..
 cd simple_library
 mkdir build
 cmake -S . -B build/ -D CMAKE_PREFIX_PATH="~/libs/cmake_ex_2libs/cmake"
+cmake --build build/
 cmake --install build/ --prefix ~/libs/cmake_ex_1lib
 
 
