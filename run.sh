@@ -1,6 +1,6 @@
 #!/bin/bash
 
-user=<users homedir>
+user=tfoerst
 
 # compiling two_libraries
 cd ./libs/two_libraries
@@ -22,8 +22,7 @@ cmake --install build/ --prefix /home/$user/libs/cmake_ex_1lib
 # compiling the executable
 cd ../../app/
 mkdir build
-cmake -S . -B build/
-cmake -S . -B build/ -D CMAKE_PREFIX_PATH="/home/$user/libs/cmake_ex_2libs/cmake;/home/$user/libs/cmake_ex_1lib/SimpleLibrary/cmake"
+cmake -S . -B build/ -D CMAKE_PREFIX_PATH="/home/$user/libs/cmake_ex_2libs/cmake;/home/$user/libs/cmake_ex_1lib/cmake/SimpleLibrary"
 cmake --build build/
 
 ./build/Main
