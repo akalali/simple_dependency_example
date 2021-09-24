@@ -2,13 +2,12 @@
 
 ./cleanup.sh
 
-
 # compiling two_libraries
 cd ./libs/two_libraries
 mkdir build
 cmake -S . -B build/
 cmake --build build/
-cmake --install build/ --prefix /home/$user/libs/cmake_ex_2libs
+cmake --install build/ --prefix ~/libs/cmake_ex_2libs
 
 # compiling simple_libraries
 # it depends on two_libraries
