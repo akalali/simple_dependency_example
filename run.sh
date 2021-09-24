@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./cleanup.sh
+
 # compiling two_libraries
 cd ./libs/two_libraries
 mkdir build
@@ -12,7 +14,7 @@ cmake --install build/ --prefix /home/tfoerst/libs/cmake_ex_2libs
 cd ..
 cd simple_library
 mkdir build
-cmake -S . -B build/ -D CMAKE_PREFIX_PATH="/home/tfoerst/libs/cmake_ex_2libs/cmake"
+cmake -S . -B build/ -D CMAKE_PREFIX_PATH="/home/tfoerst/libs/cmake_ex_2libs/cmake/TwoLibraries"
 cmake --build build/
 cmake --install build/ --prefix /home/tfoerst/libs/cmake_ex_1lib
 
@@ -20,8 +22,7 @@ cmake --install build/ --prefix /home/tfoerst/libs/cmake_ex_1lib
 # compiling the executable
 cd ../../app/
 mkdir build
-cmake -S . -B build/
-cmake -S . -B build/ -D CMAKE_PREFIX_PATH="/home/tfoerst/libs/cmake_ex_2libs/cmake;/home/tfoerst/libs/cmake_ex_1lib/SimpleLibrary/cmake"
+cmake -S . -B build/ -D CMAKE_PREFIX_PATH="~/libs/cmake_ex_1lib/cmake;~/libs/cmake_ex_2libs/cmake"
 cmake --build build/
 
 ./build/Main
