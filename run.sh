@@ -1,6 +1,6 @@
 #!/bin/bash
 
-user=tfoerst
+user=<user_name>
 
 # compiling two_libraries
 cd ./libs/two_libraries
